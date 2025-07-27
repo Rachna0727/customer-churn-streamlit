@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Churn Prediction Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- 🔹 Hero Section -->
+  <header class="hero">
+    <h1>📊 Customer Churn Prediction</h1>
+    <p>Built with Python, Power BI & XGBoost | Developed by <strong>Rachna</strong></p>
+  </header>
+
+  <!-- 🔹 Insight Cards -->
+  <section class="insight-cards">
+    <div class="card shadow">
+      <h2>📉 Churn Rate</h2>
+      <p>26.5%</p>
+    </div>
+    <div class="card shadow">
+      <h2>📆 Avg Tenure</h2>
+      <p>32.8 months</p>
+    </div>
+    <div class="card shadow">
+      <h2>💡 Top Reason</h2>
+      <p>Month-to-Month Contract</p>
+    </div>
+  </section>
+
+  <!-- 🔹 Dashboard Image -->
+  <section class="dashboard-section">
+    <h2>📈 Dashboard Overview</h2>
+    <img src="Dashboard .jpg" alt="Dashboard Screenshot" class="dashboard-img" />
+  </section>
+
+  <!-- 🔹 Model Insights -->
+  <section class="insights-section">
+    <h2>🔍 Model Insights</h2>
+    <div class="insight-imgs">
+      <img src="customer segmentation.png" alt="Feature Importance" class="insight-card" />
+      <img src="roc curve.png" alt="Churn Distribution" class="insight-card" />
+    </div>
+  </section>
+
+  <!-- 🔹 Prediction Form -->
+  <section class="predict-section">
+    <h2>🎯 Predict Churn</h2>
+    <form id="predictForm" class="form-box shadow">
+
+      <label for="gender">Gender</label>
+      <select id="gender">
+        <option value="">-- Select Gender --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="internet">Internet Service</label>
+      <select id="internet">
+        <option value="">-- Select Internet Service --</option>
+        <option value="DSL">DSL</option>
+        <option value="Fiber optic">Fiber optic</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="contract">Contract Type</label>
+      <select id="contract" required>
+        <option value="">-- Select Contract --</option>
+        <option value="Month-to-month">Month-to-month</option>
+        <option value="One year">One year</option>
+        <option value="Two year">Two year</option>
+      </select>
+
+      <label for="monthly">Monthly Charges</label>
+      <input type="number" id="monthly" placeholder="Monthly Charges" required />
+
+      <label for="total">Total Charges</label>
+      <input type="number" id="total" placeholder="Total Charges" required />
+
+      <button type="submit" class="predict-btn">🔎 Predict</button>
+    </form>
+
+    <!-- 🔄 Loader -->
+    <div id="loader" style="display:none; margin-top:15px; font-weight:bold; color:#555;">⏳ Predicting, please wait...</div>
+
+    <!-- 🔍 Prediction Result -->
+    <div id="resultBox" class="result-text"></div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <p>🚀 Made by Rachna | Data Analytics Portfolio Project</p>
+  </footer>
+
+</body>
+</html>

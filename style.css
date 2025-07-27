@@ -1,0 +1,222 @@
+/* 🔄 Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* 🔹 Hero Banner */
+.hero {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* 🔸 Insight Cards */
+.insight-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+  animation: slideUp 1.2s ease-in-out;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 25px 30px;
+  text-align: center;
+  flex: 1 1 250px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: #2575fc;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+/* 🔹 Dashboard Section */
+.dashboard-section {
+  padding: 50px 20px;
+  background: #eef3ff;
+  text-align: center;
+}
+
+.dashboard-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* ✅ Enhanced Image Effects */
+.dashboard-img,
+.insight-imgs img {
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+}
+
+/* ✨ On Scroll Reveal */
+.slideUp {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 🎯 Hover Zoom + Glow */
+.dashboard-img:hover,
+.insight-imgs img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+}
+
+/* 🔸 Model Insights */
+.insights-section {
+  background: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.insights-section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.insight-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* 🔹 Prediction Form */
+.predict-section {
+  background: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.predict-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+/* 📋 Form Styling */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input,
+select,
+button {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+select {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+button {
+  background: #2575fc;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0049d4;
+}
+
+#resultBox {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* 🔚 Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  font-size: 1rem;
+}
+
+/* 🎞️ Key Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .insight-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .insight-imgs {
+    flex-direction: column;
+  }
+
+  .dashboard-img {
+    max-width: 100%;
+  }
+}
